@@ -17,5 +17,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'eqeqeq': ['error', 'always'] // Enforce strict equality checks
   },
 }
