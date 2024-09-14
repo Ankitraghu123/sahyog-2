@@ -1,19 +1,29 @@
 {
-    "projects": [
+    "version": 2,
+    "builds": [
       {
-        "name": "volt-react-dashboard",
-        "src": "volt-react-dashboard-master/",
-        "buildCommand": "npm run build",
-        "outputDirectory": "volt-react-dashboard-master/build"
+        "src": "volt-react-dashboard-master/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "volt-react-dashboard-master/build"
+        }
       },
       {
-        "name": "sahyogplacement",
-        "src": "sahyogplacement/",
-        "buildCommand": "npm run build",
-        "outputDirectory": "sahyogplacement/dist",
-        "rewrites": [
-          { "source": "/(.*)", "destination": "/" }
-        ]
+        "src": "sahyogplacement/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "sahyogplacement/dist"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/volt-react-dashboard/(.*)",
+        "dest": "/volt-react-dashboard-master/$1"
+      },
+      {
+        "src": "/sahyogplacement/(.*)",
+        "dest": "/sahyogplacement/$1"
       }
     ]
   }
