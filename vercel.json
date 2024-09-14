@@ -4,7 +4,7 @@
         "name": "volt-react-dashboard",
         "src": "volt-react-dashboard-master/",
         "buildCommand": "npm run build",
-        "outputDirectory": "volt-react-dashboard-master/dist"
+        "outputDirectory": "volt-react-dashboard-master/build"
       },
       {
         "name": "sahyogplacement",
